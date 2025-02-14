@@ -1,6 +1,5 @@
 package com.xefi.englishtest.dao;
 
-import com.xefi.englishtest.pojos.Member;
 import com.xefi.englishtest.utilities.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;

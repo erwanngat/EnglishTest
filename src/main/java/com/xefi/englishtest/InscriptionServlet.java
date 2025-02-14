@@ -1,6 +1,5 @@
 package com.xefi.englishtest;
 
-import com.xefi.englishtest.pojos.Member;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
