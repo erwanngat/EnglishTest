@@ -2,6 +2,7 @@ package com.xefi.englishtest.pojos;
 
 import jakarta.persistence.*;
 
+@Entity
 public class Joueur {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

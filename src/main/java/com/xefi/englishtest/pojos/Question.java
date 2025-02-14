@@ -4,14 +4,15 @@ import jakarta.persistence.*;
 
 import java.sql.Timestamp;
 
+@Entity
 public class Question {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @ManyToOne
-    private Partie idPartie;
-    @OneToMany
-    private Verbe idVerbe;
+    private Partie partie;
+    @ManyToOne
+    private Verbe verbe;
     @Column(name = "reponsePreterit", length = 100)
     private String reponsePreterit;
     @Column(name = "reponseParticipePasse", length = 100)
@@ -24,9 +25,9 @@ public class Question {
     public Question() {
     }
 
-    public Question(Partie idPartie, Verbe idVerbe, String reponsePreterit, String reponseParticipePasse, Timestamp dateEnvoie, Timestamp dateReponse) {
-        this.idPartie = idPartie;
-        this.idVerbe = idVerbe;
+    public Question(Partie partie, Verbe verbe, String reponsePreterit, String reponseParticipePasse, Timestamp dateEnvoie, Timestamp dateReponse) {
+        this.partie = partie;
+        this.verbe = verbe;
         this.reponsePreterit = reponsePreterit;
         this.reponseParticipePasse = reponseParticipePasse;
         this.dateEnvoie = dateEnvoie;
@@ -41,20 +42,20 @@ public class Question {
         this.id = id;
     }
 
-    public Partie getIdPartie() {
-        return idPartie;
+    public Partie getPartie() {
+        return partie;
     }
 
-    public void setIdPartie(Partie idPartie) {
-        this.idPartie = idPartie;
+    public void setPartie(Partie partie) {
+        this.partie = partie;
     }
 
-    public Verbe getIdVerbe() {
-        return idVerbe;
+    public Verbe getVerbe() {
+        return verbe;
     }
 
-    public void setIdVerbe(Verbe idVerbe) {
-        this.idVerbe = idVerbe;
+    public void setVerbe(Verbe idVerbe) {
+        this.verbe = verbe;
     }
 
     public String getReponsePreterit() {

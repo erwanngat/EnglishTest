@@ -2,18 +2,19 @@ package com.xefi.englishtest.pojos;
 
 import jakarta.persistence.*;
 
+@Entity
 public class Partie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @ManyToOne
-    private Joueur idJoueur;
+    private Joueur joueur;
 
     public Partie() {
     }
 
     public Partie(Joueur idJoueur) {
-        this.idJoueur = idJoueur;
+        this.joueur = joueur;
     }
 
     public long getId() {
@@ -24,11 +25,11 @@ public class Partie {
         this.id = id;
     }
 
-    public Joueur getIdJoueur() {
-        return idJoueur;
+    public Joueur getJoueur() {
+        return joueur;
     }
 
-    public void setIdJoueur(Joueur idJoueur) {
-        this.idJoueur = idJoueur;
+    public void setJoueur(Joueur joueur) {
+        this.joueur = joueur;
     }
 }
