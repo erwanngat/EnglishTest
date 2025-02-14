@@ -15,19 +15,20 @@ public class Joueur {
     @Column(name = "motDePasse", length = 100)
     private String motDePasse;
     @ManyToOne
-    private Ville idVille;
+    @JoinColumn(name = "idVille")
+    private Ville ville;
     @Column(name = "niveau", length = 100)
     private String niveau;
 
     public Joueur() {
     }
 
-    public Joueur(String email, String nom, String prenom, String motDePasse, Ville idVille, String niveau) {
+    public Joueur(String email, String nom, String prenom, String motDePasse, Ville ville, String niveau) {
         this.email = email;
         this.nom = nom;
         this.prenom = prenom;
         this.motDePasse = motDePasse;
-        this.idVille = idVille;
+        this.ville = ville;
         this.niveau = niveau;
     }
 
@@ -71,12 +72,12 @@ public class Joueur {
         this.motDePasse = motDePasse;
     }
 
-    public Ville getIdVille() {
-        return idVille;
+    public Ville getVille() {
+        return ville;
     }
 
-    public void setIdVille(Ville idVille) {
-        this.idVille = idVille;
+    public void setVille(Ville idVille) {
+        this.ville = ville;
     }
 
     public String getNiveau() {

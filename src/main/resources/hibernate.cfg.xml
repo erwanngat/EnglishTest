@@ -8,7 +8,7 @@
         <property
                 name="hibernate.connection.driver_class">org.sqlite.JDBC</property>
         <property
-                name="hibernate.connection.url">jdbc:sqlite:memory</property>
+                name="hibernate.connection.url">jdbc:sqlite:C:\\Users\\DÉVELOPPEUR\\Documents</property>
         <property
                 name="hibernate.dialect">org.hibernate.community.dialect.SQLiteDialect</property>
         <!-- Affiche les requètes SQL générées par Hibernate dans la console -->

@@ -1,5 +1,7 @@
 package com.xefi.englishtest;
 
+import com.xefi.englishtest.pojos.Joueur;
+import com.xefi.englishtest.pojos.Ville;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -26,13 +28,11 @@ public class InscriptionServlet extends HttpServlet {
         String nom = req.getParameter("nom");
         String prenom = req.getParameter("prenom");
         String email = req.getParameter("email");
-        String date = req.getParameter("date");
-        String telephone = req.getParameter("telephone");
-        String sexe = req.getParameter("sexe");
-        String pays = req.getParameter("pays");
         String password = req.getParameter("password");
-        String confirmationPassword = req.getParameter("confirmation_password");
+        String idville = req.getParameter("ville");
 
+        // appel fonction dao getter id
+        Ville ville = new Ville("15", "ville1");
         if(nom.isEmpty()){
             erreurs += "Le champ nom est vide<br>";
         }
@@ -42,29 +42,14 @@ public class InscriptionServlet extends HttpServlet {
         if(email.isEmpty()){
             erreurs += "Le champ email est vide<br>";
         }
-        if(date.isEmpty()){
-            erreurs += "Le champ date est vide<br>";
-        }
-        if(telephone.isEmpty()){
-            erreurs += "Le champ telephone est vide<br>";
-        }
-        if(sexe == null){
-            erreurs += "Le champ sexe est vide<br>";
-        }
         if(password.isEmpty()){
             erreurs += "Le champ password est vide<br>";
         }
-        if(confirmationPassword.isEmpty()){
-            erreurs += "Le champ password confirmation est vide<br>";
-        }
-        if(!password.equals(confirmationPassword)){
-            erreurs += "La confirmation password != password";
-        }
 
         if(erreurs.isEmpty()){
-            Member member = new Member(nom, prenom, email, LocalDate.parse(date), telephone, sexe, pays, password);
-            session.setAttribute("member", member);
-            resp.sendRedirect("/confirmation");
+            Joueur joueur = new Joueur(email, nom, prenom, password, ville, "0");
+            session.setAttribute("joueur", joueur);
+            resp.sendRedirect("/jeu");
         }else{
             req.setAttribute("erreurs", erreurs);
             this.getServletContext().getRequestDispatcher("/WEB-INF/inscription.jsp").forward(req, resp);
