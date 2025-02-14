@@ -8,7 +8,9 @@ public class HibernateUtil {
     private HibernateUtil() {
     }
     public static synchronized SessionFactory getSessionFactory() {
+
         if (sessionFactory == null) {
+            System.setProperty("org.sqlite.tmpdir", "C:\\Users\\Nicolas\\AppData\\Local\\Temp");
             sessionFactory = new
                     Configuration().configure("hibernate.cfg.xml").
                     buildSessionFactory();

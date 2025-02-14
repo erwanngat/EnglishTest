@@ -4,11 +4,9 @@
         "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-        <!-- Connexion à une base de données Sqlite -->
-        <property
-                name="hibernate.connection.driver_class">org.sqlite.JDBC</property>
-        <property
-                name="hibernate.connection.url">jdbc:sqlite:memory</property>
+        <!-- Connexion à une base de données SQLite -->
+        <property name="hibernate.connection.driver_class">org.sqlite.JDBC</property>
+        <property name="hibernate.connection.url">jdbc:sqlite::memory:</property>
         <property
                 name="hibernate.dialect">org.hibernate.community.dialect.SQLiteDialect</property>
         <!-- Affiche les requètes SQL générées par Hibernate dans la console -->
@@ -16,7 +14,7 @@
         <!-- Recrée les tables de la base de données à chaque démarrage -->
         <property name="hibernate.hbm2ddl.auto">create</property>
         <!-- Classes de mapping -->
-        <mapping class="com.xefi.englishtest.pojos.Member"></mapping>
-        <mapping class="com.xefi.englishtest.pojos.Country"></mapping>
+        <mapping class="com.xefi.tpjavaee.pojos"/>
+        <mapping class="com.xefi.tpjavaee.pojos" />
     </session-factory>
 </hibernate-configuration>
