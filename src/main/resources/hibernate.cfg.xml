@@ -8,7 +8,7 @@
         <property
                 name="hibernate.connection.driver_class">org.sqlite.JDBC</property>
         <property
-                name="hibernate.connection.url">jdbc:sqlite:C:\\Users\\DÉVELOPPEUR\\Documents</property>
+                name="hibernate.connection.url">jdbc:sqlite:C:\Users\ilyes\Documents></property>
         <property
                 name="hibernate.dialect">org.hibernate.community.dialect.SQLiteDialect</property>
         <!-- Affiche les requètes SQL générées par Hibernate dans la console -->
@@ -16,7 +16,10 @@
         <!-- Recrée les tables de la base de données à chaque démarrage -->
         <property name="hibernate.hbm2ddl.auto">create</property>
         <!-- Classes de mapping -->
-        <mapping class="com.xefi.englishtest.pojos.Member"></mapping>
-        <mapping class="com.xefi.englishtest.pojos.Country"></mapping>
+        <mapping class="com.xefi.englishtest.pojos.Joueur"></mapping>
+        <mapping class="com.xefi.englishtest.pojos.Partie"></mapping>
+        <mapping class="com.xefi.englishtest.pojos.Question"></mapping>
+        <mapping class="com.xefi.englishtest.pojos.Ville"></mapping>
+        <mapping class="com.xefi.englishtest.pojos.Verbe"></mapping>
     </session-factory>
 </hibernate-configuration>

@@ -17,7 +17,9 @@ target/
 .settings
 .springBeans
 .sts4-cache
-
+./resources/hibernate.cfg.xml
+./utilities/HibernateUtil
+pom.xml
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
